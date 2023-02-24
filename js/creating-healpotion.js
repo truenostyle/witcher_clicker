@@ -19,11 +19,24 @@ for(let i = 0; i < 5; i++)
     document.body.appendChild(images[i]);
 }
 
-if (pers.hp <= 20)
+let intervalHP = setInterval(checkHP, 5000);
+
+function checkHP()
 {
-    images[hp_count].style.display = 'block';
-    hp_count++;
+    if (hp_count <= images.length)
+    {
+        if(pers.hp <= 35)
+        {
+            images[hp_count].style.display = 'block';
+            hp_count++;
+        }
+    }
+    else {
+        clearInterval(intervalHP);
+    }
+   
 }
+
 
 for (let i = 0; i < images.length; i++)
 {
@@ -40,5 +53,6 @@ for (let i = 0; i < images.length; i++)
         {
             pers.hp = 100;
         }
+        Pers_damage(pers.hp) ;
     });
 }
