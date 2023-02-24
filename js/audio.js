@@ -22,6 +22,7 @@ for (let i = 0; i < hit.length; i++)
         const newAudio = new Audio('./sounds/sword-hit-2.mp3');
         newAudio.volume = 0.3;
         newAudio.play();
+       
     });
 }
 
@@ -30,4 +31,5 @@ document.addEventListener("click", function(event) {
     const newAudio = new Audio('./sounds/sword-hit-1.mp3');
     newAudio.volume = 0.1;
     newAudio.play(); 
+    shakeImage(Sword);
 });  

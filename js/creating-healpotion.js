@@ -35,7 +35,7 @@ let intervalDMG = setInterval(checkDMG, 3000);
 
 function checkDMG()
 {
-    if (hp_count <= images.length)
+    if (hp_count <= dmgimages.length)
     {
     if(Math.round(Math.random()) === 1)
         {
