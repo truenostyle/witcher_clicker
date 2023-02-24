@@ -1,12 +1,10 @@
 'use strict'
-<<<<<<< HEAD
-/*
+
 var audio = document.getElementById("sword-hit-1");
-=======
+
 
 function change() {
     var checkbox = document.getElementById("switch-music");
->>>>>>> f059cea1c6fdc963c583770dcc918de025584806
 
     var music = document.getElementById("myAudio");
     music.volume = 0.1;
@@ -34,8 +32,4 @@ document.addEventListener("click", function(event) {
     newAudio.volume = 0.3;
     newAudio.play();
 });
-<<<<<<< HEAD
-*/
-=======
 
->>>>>>> f059cea1c6fdc963c583770dcc918de025584806
