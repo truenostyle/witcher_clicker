@@ -8,16 +8,28 @@ body, html {
     background-image: url('./photo/background/Level\ 1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%; 
+<<<<<<< HEAD
 }
 
 body {
     background-color: #ececec;
     width: 100%;  
+=======
+    overflow-y: hidden;
+>>>>>>> f059cea1c6fdc963c583770dcc918de025584806
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
+<<<<<<< HEAD
     -o-user-select: none; 
+=======
+    -o-user-select: none;
+} 
+body {
+    background-color: #ececec;
+    width: 100%;   
+>>>>>>> f059cea1c6fdc963c583770dcc918de025584806
 } 
 
 #img_sword {
