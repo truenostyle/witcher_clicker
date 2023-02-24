@@ -15,7 +15,6 @@ for(let i = 0; i < 5; i++)
     setTimeout(function() {
         document.body.appendChild(image);
         }, randomTime);
-
 }
 
 
