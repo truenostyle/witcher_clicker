@@ -11,14 +11,25 @@
     <body>  
 
         <img id="img_sword" src="./photo/items/sword.png"/> 
-        <div style="width: 300px;" class="enemies"> 
+        <div style="position: absolute; width: 300px;" class="enemies" onclick="fight_chydo()"> 
             <div class="w3-light-grey" style="margin-left: 50%;">
-                <div id="myBar" class="w3-red w3-center" style="width:100%">100%</div>
+                <div id="Chydo_Bar" class="w3-red w3-center" style="width:100%">100%</div>
             </div> 
-            <img class="img_enemy" onclick="move()" src="./photo/enemies/chydo.png"/>
+            <img class="img_enemy"  src="./photo/enemies/chydo.png"/>
+        </div>  
+
+        <div style="position: absolute; width: 300px; left: 30%;" class="enemies"> 
+            <div class="w3-light-grey" style="margin-left: 50%;">
+                <div id="Dog_Bar" class="w3-red w3-center" style="width:100%">100%</div>
+            </div> 
+            <img class="img_enemy" onclick="fight_dog()" src="./photo/enemies/dog.png"/>
         </div>  
 
         <input type="checkbox" id="switch-music" onchange="change()">
         <audio id="myAudio" src="./sounds/music.mp3" autoplay loop></audio>  
+
+        <div class="w3-light-grey" style="position: absolute; width: 15%; margin-left: 5%; bottom: 10%;"> 
+            <div id="myBar" class="w3-red w3-center" style=" width:100%">100%</div>
+        </div> 
     </body>
 </html>

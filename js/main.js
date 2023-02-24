@@ -1,15 +1,28 @@
 var _damageSword = 10;
 var HP_pers = 100;
 var HP_chydo = 250;
-var width = 100;
- 
-function move() {
-    var elem = document.getElementById("myBar");    
+var HP_dog = 400;
+var width_chydo = 100;
+var width_dog = 100;
+
+
+function fight_chydo() {
+    var elem = document.getElementById("Chydo_Bar");    
     var proc = (100 * _damageSword) / HP_chydo; 
-    width -= proc;
-    elem.style.width = width + '%'; 
-    elem.innerHTML = width * 1  + '%'; 
+    width_chydo -= proc;
+    elem.style.width = width_chydo + '%'; 
+    elem.innerHTML = width_chydo * 1  + '%'; 
 }
+
+
+function fight_dog() {
+    var elem = document.getElementById("Dog_Bar");    
+    var proc = (100 * _damageSword) / HP_dog; 
+    width_dog -= proc;
+    elem.style.width = width_dog + '%'; 
+    elem.innerHTML = width_dog * 1  + '%'; 
+}
+
 
 
 

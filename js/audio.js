@@ -28,6 +28,6 @@ for (let i = 0; i < hit.length; i++)
 
 document.addEventListener("click", function(event) {
     const newAudio = new Audio('./sounds/sword-hit-1.mp3');
-    newAudio.volume = 0.3;
+    newAudio.volume = 0.1;
     newAudio.play(); 
 });  
