@@ -10,16 +10,23 @@ function change() {
     } else {
       music.pause();
     }
-  }
+}
 
-function playMusic() {
-    const music = new Audio('./sounds/music.mp3');
-    music.volume = 0.1;
-    music.play();
-  }
+let hit = document.getElementsByClassName("img_enemy");
+
+for (let i = 0; i < hit.length; i++)
+{
+    hit[i].addEventListener("click", function(event) {
+        const newAudio = new Audio('./sounds/sword-hit-2.mp3');
+        newAudio.volume = 0.3;
+        newAudio.play();
+    });
+}
+
 
 document.addEventListener("click", function(event) {
     const newAudio = new Audio('./sounds/sword-hit-1.mp3');
     newAudio.volume = 0.3;
     newAudio.play();
 });
+

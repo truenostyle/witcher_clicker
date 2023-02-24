@@ -8,11 +8,6 @@ body, html {
     background-image: url('./photo/background/Level\ 1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%; 
-<<<<<<< HEAD
-    
-}
-
-=======
     overflow-y: hidden;
     user-select: none;
     -moz-user-select: none;
@@ -20,7 +15,6 @@ body, html {
     -webkit-user-select: none;
     -o-user-select: none;
 } 
->>>>>>> 923988802e565917bca7d598226944feaf2c5d4f
 body {
     background-color: #ececec;
     width: 100%;   
