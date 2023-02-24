@@ -16,7 +16,10 @@ class FactoryEnemys {
 
 class Create_pers {
     constructor() {
-        this.hp = 100;
+        if (localStorage.getItem('pers.hp') !== null) {
+            this.hp = localStorage.getItem('pers.hp');
+            }
+        else this.hp = 100;
         this.damage = 10; 
     } 
 }
@@ -48,11 +51,13 @@ var elem21 = document.getElementById("chydo2");
 var elem22 = document.getElementById("dog1");  
 
 function fight_chydo() {
+    if (localStorage.getItem('chydo1') !== null) chydo1.width = localStorage.getItem('chydo1');
     var elem = document.getElementById("Chydo_Bar");    
     var proc = (100 * pers.damage) / chydo1.hp; 
     chydo1.width -= proc;
     elem.style.width = chydo1.width + '%'; 
     elem.innerHTML = chydo1.width * 1  + '%';  
+    localStorage.setItem('chydo1.width', chydo1.width); 
     if (chydo1.width === 0) {   
         elem2.style.visibility = "hidden";
     }
@@ -60,11 +65,14 @@ function fight_chydo() {
 }
 
 function fight_chydo2() {
+    if (localStorage.getItem('chydo2') !== null) chydo2.width = localStorage.getItem('chydo2');
+
     var elem = document.getElementById("Chydo_Bar2");    
     var proc = (100 * pers.damage) / chydo2.hp; 
     chydo2.width -= proc;
     elem.style.width = chydo2.width + '%'; 
     elem.innerHTML = chydo2.width * 1  + '%';  
+    localStorage.setItem('chydo2.width', chydo2.width); 
     if (chydo2.width === 0) { 
         elem21.style.visibility = "hidden";
     }
@@ -72,11 +80,13 @@ function fight_chydo2() {
 }
 
 function fight_dog() {
+    if (localStorage.getItem('dog1') !== null) dog1.width = localStorage.getItem('dog1');
     var elem = document.getElementById("Dog_Bar");    
     var proc = (100 * pers.damage) / dog1.hp; 
     dog1.width -= proc;
     elem.style.width = dog1.width + '%'; 
-    elem.innerHTML = dog1.width * 1  + '%';   
+    elem.innerHTML = dog1.width * 1  + '%';  
+    localStorage.setItem('dog1.width', dog1.width);  
     if (dog1.width === 0) {  
         elem22.style.visibility = "hidden";
     }
@@ -107,7 +117,8 @@ function Pers_damage(hp) {
     
     var elem = document.getElementById("myBar");    
     elem.style.width = hp + '%'; 
-    elem.innerHTML = hp * 1  + '%';   
+    elem.innerHTML = hp * 1  + '%';  
+    localStorage.setItem('pers.hp', pers.hp); 
 } 
 
 
