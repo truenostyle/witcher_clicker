@@ -26,11 +26,14 @@ body {
 #img_sword {
     position: absolute;
     bottom: -20%;
-    left: 10%; 
+    left: 25%; 
+    width: 700px;
 }
 
 .img_enemy {
     cursor: url('./cursor/fight.png')  2 2, crosshair; 
+    width: 300px;
+    height: 300px;
 }
 
 div.enemies {

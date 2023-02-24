@@ -1,6 +1,6 @@
 'use strict'
 
-let hitAnim = document.getElementsByClassName("img_enemy");
+let hitAnim = document.getElementsByClassName("img_enemy"); 
 
 for (let i = 0; i < hit.length; i++)
 {
