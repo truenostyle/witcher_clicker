@@ -1,6 +1,6 @@
 'use strict'
 
-var audio = document.getElementById("sword-hit-1");
+var audio = document.getElementById("sword-hit-1"); 
 
 function change() {
     var checkbox = document.getElementById("switch-music"); 
@@ -29,5 +29,5 @@ for (let i = 0; i < hit.length; i++)
 document.addEventListener("click", function(event) {
     const newAudio = new Audio('./sounds/sword-hit-1.mp3');
     newAudio.volume = 0.3;
-    newAudio.play();
-}); 
+    newAudio.play(); 
+});  
