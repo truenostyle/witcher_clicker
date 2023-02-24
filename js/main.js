@@ -48,12 +48,12 @@ function fight_chydo() {
     var proc = (100 * pers.damage) / chydo1.hp; 
     chydo1.width -= proc;
     elem.style.width = chydo1.width + '%'; 
-    elem.innerHTML = chydo1.width * 1  + '%'; 
-    hit_Pers(chydo1.damage); 
+    elem.innerHTML = chydo1.width * 1  + '%';  
     if (chydo1.width === 0) {
         var elem2 = document.getElementById("chydo1");  
         elem2.style.visibility = "hidden";
     }
+    hit_Pers(chydo1.damage);
 }
 
 function fight_chydo2() {
@@ -61,23 +61,25 @@ function fight_chydo2() {
     var proc = (100 * pers.damage) / chydo2.hp; 
     chydo2.width -= proc;
     elem.style.width = chydo2.width + '%'; 
-    elem.innerHTML = chydo2.width * 1  + '%'; 
-    hit_Pers(chydo2.damage); 
+    elem.innerHTML = chydo2.width * 1  + '%';  
     if (chydo2.width === 0) {
         var elem2 = document.getElementById("chydo2");  
         elem2.style.visibility = "hidden";
     }
+    hit_Pers(chydo2.damage); 
 }
-
-
 
 function fight_dog() {
     var elem = document.getElementById("Dog_Bar");    
     var proc = (100 * pers.damage) / dog1.hp; 
     dog1.width -= proc;
     elem.style.width = dog1.width + '%'; 
-    elem.innerHTML = dog1.width * 1  + '%';  
-    hit_Pers(dog1.damage); 
+    elem.innerHTML = dog1.width * 1  + '%';   
+    if (dog1.width === 0) {
+        var elem2 = document.getElementById("dog1");  
+        elem2.style.visibility = "hidden";
+    }
+    hit_Pers(dog1.damage);
 }
 
 function hit_Pers(damage) {
@@ -89,13 +91,13 @@ function hit_Pers(damage) {
 }
 
 function Pers_damage(hp) {
-    if (hp <= 0) {
-        pers.hp = 0;
-        hp = 0;
-    } 
+    if (hp <= 0) hp = 0; 
     var elem = document.getElementById("myBar");    
     elem.style.width = hp + '%'; 
     elem.innerHTML = hp * 1  + '%';  
+    if (hp === 0) { 
+        alert("game over");
+    }
 } 
 
 
