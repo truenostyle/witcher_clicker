@@ -7,29 +7,19 @@ body, html {
     scroll-behavior: smooth;  
     background-image: url('./photo/background/Level\ 1.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
-<<<<<<< HEAD
+    background-size: 100% 100%;  
 }
 
 body {
     background-color: #ececec;
-    width: 100%;  
-=======
-    overflow-y: hidden;
->>>>>>> f059cea1c6fdc963c583770dcc918de025584806
+    width: 100%;   
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
-<<<<<<< HEAD
-    -o-user-select: none; 
-=======
+    overflow-y: hidden;
     -o-user-select: none;
-} 
-body {
-    background-color: #ececec;
-    width: 100%;   
->>>>>>> f059cea1c6fdc963c583770dcc918de025584806
+    -o-user-select: none; 
 } 
 
 #img_sword {
@@ -45,3 +35,4 @@ body {
 div.enemies {
     position: relative;
 }
+ 
