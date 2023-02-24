@@ -27,7 +27,6 @@ for (let i = 0; i < dmgimages.length; i++)
         healAudio.play();
         dmgimages[i].style.display = 'none';
         pers.damage = pers.damage + 10;
-        Pers_damage(pers.damage);
     });
 }
 
