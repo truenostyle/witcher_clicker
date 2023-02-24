@@ -35,11 +35,17 @@ let intervalDMG = setInterval(checkDMG, 3000);
 
 function checkDMG()
 {
+    if (hp_count <= images.length)
+    {
     if(Math.round(Math.random()) === 1)
         {
             dmgimages[hp_count].style.display = 'block';
             hp_count++;
         }  
+    }
+    else {
+        clearInterval(intervalDMG);
+    }
 }
 
 
