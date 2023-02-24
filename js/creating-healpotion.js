@@ -1,10 +1,54 @@
 'use strict'
 
-var images = []; 
+let dmgimages = [];
+for (let i = 0; i < 5; i++) {
+    let img2 = new Image(); 
+    img2.src = './photo/items/dmgpotion.png'; 
+    dmgimages.push(img2); 
+}
+
+for(let i = 0; i < 5; i++)
+{
+    dmgimages[i].style.display = 'none';
+    dmgimages[i].style.position = "absolute";
+    dmgimages[i].style.width = "100px";
+    dmgimages[i].style.height = "100px";
+    dmgimages[i].style.top = Math.floor(Math.random() * (window.innerHeight - "100")) + "px";
+    dmgimages[i].style.left = Math.floor(Math.random() * (window.innerWidth  - "100")) + "px";
+    document.body.appendChild(dmgimages[i]);
+}
+
+
+for (let i = 0; i < dmgimages.length; i++)
+{
+    dmgimages[i].addEventListener("click", function(event) {
+        const healAudio = new Audio('./sounds/drink.mp3');
+        healAudio.volume = 0.3;
+        healAudio.play();
+        dmgimages[i].style.display = 'none';
+        pers.damage = pers.damage + 10;
+        Pers_damage(pers.damage);
+    });
+}
+
+let intervalDMG = setInterval(checkDMG, 3000);
+
+
+function checkDMG()
+{
+    if(Math.round(Math.random()) === 1)
+        {
+            dmgimages[hp_count].style.display = 'block';
+            hp_count++;
+        }  
+}
+
+
+let images = []; 
 let hp_count = 0;
 
-for (var i = 0; i < 5; i++) {
-    var img = new Image(); 
+for (let i = 0; i < 5; i++) {
+    let img = new Image(); 
     img.src = './photo/items/chicken.png'; 
     images.push(img); 
 }
@@ -14,12 +58,14 @@ for(let i = 0; i < 5; i++)
 {
     images[i].style.display = 'none';
     images[i].style.position = "absolute";
-    images[i].style.top = Math.floor(Math.random() * window.innerHeight) + "px";
-    images[i].style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+    images[i].style.width = "100px";
+    images[i].style.height = "100px";
+    images[i].style.top = Math.floor(Math.random() * (window.innerHeight - "100")) + "px";
+    images[i].style.left = Math.floor(Math.random() * (window.innerWidth  - "100")) + "px";
     document.body.appendChild(images[i]);
 }
 
-let intervalHP = setInterval(checkHP, 5000);
+let intervalHP = setInterval(checkHP, 3000);
 
 function checkHP()
 {

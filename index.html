@@ -6,6 +6,7 @@
         <script defer src="./js/hits.js"></script>
         <script defer src="./js/creating-healpotion.js"></script>
         <link rel="stylesheet" href="./StyleMain.css"> 
+        <link rel="stylesheet" href="./checkbox.css"> 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
     <body>  
@@ -34,7 +35,12 @@
             <img class="img_enemy" onclick="fight_dog()" src="./photo/enemies/dog.png"/>
         </div>  
 
-        <input type="checkbox" id="switch-music" onchange="change()">
+       <label>
+            <input type="checkbox" id="switch-music" onchange="change()">
+            <span class="checkbox-custom"></span>
+            <span class="checkbox-label">MUSIC</span>
+          </label>
+
         <audio id="myAudio" src="./sounds/music.mp3" autoplay loop></audio>  
 
         <div class="w3-light-grey" style="position: absolute; width: 15%; margin-left: 5%; bottom: 10%;"> 

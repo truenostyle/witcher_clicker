@@ -1,11 +1,13 @@
 'use strict'
 
 let hitAnim = document.getElementsByClassName("img_enemy"); 
+let Sword = document.getElementById("img_sword");
 
 for (let i = 0; i < hit.length; i++)
 {
     hitAnim[i].addEventListener("click", function(event) {
         shakeImage(hitAnim[i]);
+        shakeImage(Sword);
     });
 }
 
@@ -14,7 +16,7 @@ function shakeImage(img) {
     var x = 0;
   
     intervalId = setInterval(function() {
-      x = x + 0.1;
+      x = x + ((Math.random() * 0.4) + 0.1);
       var y = Math.sin(x) * 10;
       img.style.transform = "translate(" + y + "px, " + y + "px)";
       if (x >= 3) {
