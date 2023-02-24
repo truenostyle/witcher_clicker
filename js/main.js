@@ -1,5 +1,5 @@
 var _damageSword = 10;
-var HP_pers = 100;
+var HP_pers = 19;
 var HP_chydo = 250;
 var HP_dog = 400;
 var width_chydo = 100;
