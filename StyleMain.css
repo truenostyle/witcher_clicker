@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    height: 100%; 
+} 
+#Body {
+    background-color: aliceblue; 
+    width: 2000px;  
+}
+
+#Menu {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    background-color: black;
+    top: 100px;
+    left: 100px;
+    visibility:hidden;
+}
+
+.MenuItem {
+    position: relative;
+    width: 150px;
+    height: 33px;
+    display: inline-block;  
+}
+
+p {
+    color: red;
+    display: inline-block;
+    margin-right: 60px;
+}
+
+.MenuItem:hover {
+    background-color: gray;
+}
