@@ -1,14 +1,16 @@
 body, html {
     margin: 0;
     height: 100%;
-    overflow-x:hidden;  /*для горизонтального*/
+    overflow-x:hidden; 
+    overflow-y: hidden;
     cursor: url('./cursor/simple.png')  2 2, crosshair;
     scroll-behavior: smooth;  
     background-image: url('./photo/background/Level\ 1.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%; 
-    overflow-y: hidden;
-} 
+    
+}
+
 body {
     background-color: #ececec;
     width: 100%;   
@@ -18,4 +20,9 @@ body {
     position: absolute;
     bottom: -20%;
     left: 10%; 
+}
+
+.img_enemy {
+    cursor: url('./cursor/fight.png')  2 2, crosshair; 
+
 }
