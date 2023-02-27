@@ -1,7 +1,5 @@
 'use strict'
 
-localStorage.clear();
-
 class FactoryEnemys {  
     static create(type) {  
         switch (type) {
@@ -64,6 +62,7 @@ function fight_chydo() {
         elem2.style.visibility = "hidden"; 
     }
     hit_Pers(chydo1.damage);
+    checkLVL();
 }
 
 function fight_chydo2() {
@@ -79,6 +78,7 @@ function fight_chydo2() {
         elem21.style.visibility = "hidden"; 
     }
     hit_Pers(chydo2.damage); 
+    checkLVL();
 }
 
 function fight_dog() {
@@ -93,6 +93,7 @@ function fight_dog() {
         elem22.style.visibility = "hidden";
     }
     hit_Pers(dog1.damage);
+    checkLVL();
 }
 
 function hit_Pers(damage) {
@@ -121,22 +122,34 @@ function Pers_damage(hp) {
     elem.style.width = hp + '%'; 
     elem.innerHTML = hp * 1  + '%';  
     localStorage.setItem('pers.hp', pers.hp); 
-} 
+}   
 
-
-
-let interval = setInterval(checkLVL, 2000);
-
-
+let lvl = 1;
 function checkLVL()
 {
-    if (chydo1.width <= 0 && chydo2.width <= 0 && dog1.width <= 0) {
+    if (chydo1.width <= 0 && chydo2.width <= 0 && dog1.width <= 0 && lvl === 1) {
         alert("lvl2");
-        //var body = document.getElementById("body"); 
-        //body.style.backgroundImage = url('./photo/background/Level\ 2.jpg');
+        var body = document.getElementById("body"); 
+        body.style.backgroundImage = "url('./photo/background/Level\ 2.jpg')";
+        elem2.style.visibility = "visible";
+        elem21.style.visibility = "visible";
+        elem22.style.visibility = "visible";
+        chydo1.width = 100;
+        chydo2.width = 100;
+        dog1.width = 100;
+        lvl++;
     }
-    else {
-        clearInterval(interval);
-        alert("lvl1");
+    if (chydo1.width <= 0 && chydo2.width <= 0 && dog1.width <= 0 && lvl === 2) {
+        alert("lvl2");
+        var body = document.getElementById("body"); 
+        body.style.backgroundImage = "url('./photo/background/Level\ 3.png')";
+        elem2.style.visibility = "visible";
+        elem21.style.visibility = "visible";
+        elem22.style.visibility = "visible";
+        chydo1.width = 100;
+        chydo2.width = 100;
+        dog1.width = 100;
+        lvl++;
     }
+    
 }

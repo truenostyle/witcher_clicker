@@ -1,4 +1,4 @@
-body, html {
+html {
     margin: 0;
     height: 100%;
     overflow-x:hidden; 
@@ -9,7 +9,7 @@ body, html {
    
 }
 
-body {
+#body {
     background-color: #ececec; 
     width: 100%;    
     overflow-y: hidden; 
