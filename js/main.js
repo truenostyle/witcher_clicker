@@ -58,7 +58,7 @@ function fight_chydo() {
     elem.style.width = chydo1.width + '%'; 
     elem.innerHTML = chydo1.width * 1  + '%';  
     localStorage.setItem('chydo1.width', chydo1.width); 
-    if (chydo1.width === 0) {   
+    if (chydo1.width <= 0) {   
         elem2.style.visibility = "hidden";
     }
     hit_Pers(chydo1.damage);
@@ -73,7 +73,7 @@ function fight_chydo2() {
     elem.style.width = chydo2.width + '%'; 
     elem.innerHTML = chydo2.width * 1  + '%';  
     localStorage.setItem('chydo2.width', chydo2.width); 
-    if (chydo2.width === 0) { 
+    if (chydo2.width <= 0) { 
         elem21.style.visibility = "hidden";
     }
     hit_Pers(chydo2.damage); 
@@ -87,7 +87,7 @@ function fight_dog() {
     elem.style.width = dog1.width + '%'; 
     elem.innerHTML = dog1.width * 1  + '%';  
     localStorage.setItem('dog1.width', dog1.width);  
-    if (dog1.width === 0) {  
+    if (dog1.width <= 0) {  
         elem22.style.visibility = "hidden";
     }
     hit_Pers(dog1.damage);
