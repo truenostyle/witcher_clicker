@@ -1,6 +1,8 @@
 'use strict'
 
 let dmgimages = [];
+let hp_count = 0;
+let dmg_count = 0;
 for (let i = 0; i < 5; i++) {
     let img2 = new Image(); 
     img2.src = './photo/items/dmgpotion.png'; 
@@ -35,12 +37,12 @@ let intervalDMG = setInterval(checkDMG, 3000);
 
 function checkDMG()
 {
-    if (hp_count <= dmgimages.length)
+    if (dmg_count <= dmgimages.length)
     {
     if(Math.round(Math.random()) === 1)
         {
-            dmgimages[hp_count].style.display = 'block';
-            hp_count++;
+            dmgimages[dmg_count].style.display = 'block';
+            dmg_count++;
         }  
     }
     else {
@@ -50,7 +52,7 @@ function checkDMG()
 
 
 let images = []; 
-let hp_count = 0;
+
 
 for (let i = 0; i < 5; i++) {
     let img = new Image(); 
@@ -100,6 +102,9 @@ for (let i = 0; i < images.length; i++)
         {
             pers.hp = pers.hp + 20;
         } else if (pers.hp >= 81 && pers.hp <= 99)
+        {
+            pers.hp = 100;
+        } else if (pers.hp >= 100)
         {
             pers.hp = 100;
         }
