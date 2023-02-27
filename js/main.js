@@ -1,5 +1,7 @@
 'use strict'
 
+localStorage.clear();
+
 class FactoryEnemys {  
     static create(type) {  
         switch (type) {
@@ -59,7 +61,7 @@ function fight_chydo() {
     elem.innerHTML = chydo1.width * 1  + '%';  
     localStorage.setItem('chydo1.width', chydo1.width); 
     if (chydo1.width <= 0) {   
-        elem2.style.visibility = "hidden";
+        elem2.style.visibility = "hidden"; 
     }
     hit_Pers(chydo1.damage);
 }
@@ -74,7 +76,7 @@ function fight_chydo2() {
     elem.innerHTML = chydo2.width * 1  + '%';  
     localStorage.setItem('chydo2.width', chydo2.width); 
     if (chydo2.width <= 0) { 
-        elem21.style.visibility = "hidden";
+        elem21.style.visibility = "hidden"; 
     }
     hit_Pers(chydo2.damage); 
 }
@@ -123,21 +125,18 @@ function Pers_damage(hp) {
 
 
 
-/*
+let interval = setInterval(checkLVL, 2000);
 
-function move() {
-    var elem = document.getElementById("myBar");   
-    var width = 100;
-    var id = setInterval(frame, 10);
-    function frame() { 
-        if (width <= HP_chydo - _damageSword) {
-        clearInterval(id);
-        HP_chydo = HP_chydo - _damageSword;
-        } 
-        else {
-        width -= _damageSword; 
-        elem.style.width = width + '%'; 
-        elem.innerHTML = width * 1  + '%';
-        }
+
+function checkLVL()
+{
+    if (chydo1.width <= 0 && chydo2.width <= 0 && dog1.width <= 0) {
+        alert("lvl2");
+        //var body = document.getElementById("body"); 
+        //body.style.backgroundImage = url('./photo/background/Level\ 2.jpg');
     }
-}*/
+    else {
+        clearInterval(interval);
+        alert("lvl1");
+    }
+}

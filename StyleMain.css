@@ -5,9 +5,8 @@ body, html {
     overflow-y: hidden;
     cursor: url('./cursor/simple.png')  2 2, crosshair;
     scroll-behavior: smooth;  
-    background-image: url('./photo/background/Level\ 1.jpg');
-    background-repeat: no-repeat; 
-    background-size: 100% 100%;   
+    
+   
 }
 
 body {
@@ -20,7 +19,10 @@ body {
     -webkit-user-select: none; 
     overflow-y: hidden;
     -o-user-select: none;
-    -o-user-select: none;  
+    -o-user-select: none;   
+    background-image: url('./photo/background/Level\ 1.jpg');
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;  
 }  
 
 #img_sword {

@@ -85,7 +85,6 @@ function checkHP()
     else {
         clearInterval(intervalHP);
     }
-   
 }
 
 
