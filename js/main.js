@@ -7,7 +7,6 @@ class FactoryEnemys {
                 break;
             case "dog": return new Create_dog();
                 break;
-        
             default: console.log("Error");
                 break;
         }  
