@@ -1,35 +1,32 @@
 'use strict'
-
-var audio = document.getElementById("sword-hit-1"); 
+const hit1Audio = new Audio('./sounds/sword-hit-1.mp3');
+const hit2Audio = new Audio('./sounds/sword-hit-2.mp3');
+const musicAudio = document.getElementById("myAudio");
 
 function change() {
     var checkbox = document.getElementById("switch-music"); 
-
-    var music = document.getElementById("myAudio");
-    music.volume = 0.1;
+    musicAudio.volume = musicRangeVolume;
     if (checkbox.checked == true) {
-        music.play();
+        musicAudio.play();
     } else {
-        music.pause();
+        musicAudio.pause();
     }
 }
+
 
 let hit = document.getElementsByClassName("img_enemy");
 
 for (let i = 0; i < hit.length; i++)
 {
     hit[i].addEventListener("click", function(event) {
-        const newAudio = new Audio('./sounds/sword-hit-2.mp3');
-        newAudio.volume = 0.3;
-        newAudio.play();
-       
+        hit2Audio.volume = resultRangeVolume;
+        hit2Audio.play();
     });
 }
 
 
 document.addEventListener("click", function(event) {
-    const newAudio = new Audio('./sounds/sword-hit-1.mp3');
-    newAudio.volume = 0.1;
-    newAudio.play(); 
+    hit1Audio.volume = resultRangeVolume;
+    hit1Audio.play(); 
     shakeImage(Sword);
 });  
