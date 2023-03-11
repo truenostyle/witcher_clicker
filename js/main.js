@@ -1,4 +1,84 @@
 'use strict'
+    var damage = 10; 
+
+    var imageUrl = "./photo/enemies/dog.png";
+ 
+    class Enemy {
+  constructor() {
+    this.health = 100;
+    this.damage = 25;
+    this.element = document.createElement('div');
+    this.element.style.width = '150px';
+    this.element.style.height = '150px';  
+    this.element.style.position = 'absolute';
+    this.element.style.top = this.randomPosition(0, window.innerHeight - 150) + 'px';
+    this.element.style.left = this.randomPosition(0, window.innerWidth - 150) + 'px';
+    document.body.appendChild(this.element);
+
+    const img = document.createElement('img');
+    img.src = './photo/enemies/dog.png';
+    img.style.width = '180px';
+    img.style.height = '180px';
+
+    // Добавляем изображение в div
+    this.element.appendChild(img);   
+
+    this.progressBar = document.createElement('div');  
+    this.progressBar.classList.add('progress-bar');
+    this.progressBar.innerText = '100%';
+    this.element.appendChild(this.progressBar);
+    this.element.addEventListener('click', () => {
+    this.health -= damage;
+    const percentage = this.health + '%';
+    this.progressBar.style.width = percentage;
+    this.progressBar.innerText = percentage;
+    if (this.health <= 0) {
+        this.element.remove();
+      }
+    });
+  }
+
+  randomPosition(min, max) {
+    const num = Math.floor(Math.random() * (max - min + 1) + min);
+    const otherEnemies = document.querySelectorAll('.enemy');
+    let overlap = false;
+    for (let enemy of otherEnemies) {
+    const x1 = num;
+    const y1 = num;
+    const x2 = parseInt(enemy.style.top);
+    const y2 = parseInt(enemy.style.left);
+    const distance = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+    if (distance < 50) {
+        overlap = true;
+        break;
+      }
+    }
+    if (overlap) {
+      return this.randomPosition(min, max);
+    } else {
+      return num;
+    }
+  }
+}
+
+for (let i = 0; i < 5; i++) {
+  new Enemy();
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 class FactoryEnemys {  
     static create(type) {  
@@ -151,4 +231,4 @@ function checkLVL()
         lvl++;
     }
     
-}
+}*/

@@ -8,7 +8,7 @@ html, body {
   background-size: 100% 100%;
 } 
 
-
+/*
 #myVideo {
   position: fixed;
   right: 0;
@@ -34,7 +34,7 @@ to {width: 100%; height: 10px; visibility: hidden}
 
 .videoIndex{ 
 animation-name: lol;
-animation-duration: 10s;  
+animation-duration: 234s;  
 } 
 
 @keyframes lol {
@@ -62,12 +62,13 @@ img.rot {
 }   
 
 #p_zoomIMG{  
+position: absolute;
 margin-top: 5%; 
 margin-left: 35%; 
-animation-delay: 13s; 
+animation-delay: 1s; 
 visibility:hidden;
 animation-name: p_zoomIMGAnim;
-animation-duration: 130s;
+animation-duration: 250s;
 }
 
 @keyframes p_zoomIMGAnim {
@@ -76,4 +77,4 @@ to {visibility: visible}
 }
 
 .zoomIMG { transition: transform 1.5s; }
-.zoomIMG:hover { transform: scale(1.3); }
+.zoomIMG:hover { transform: scale(1.3); }*/ 
