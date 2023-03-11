@@ -2,6 +2,7 @@
 
 let menu_conteiner = document.getElementById('menu_conteiner');
 const play =  document.getElementById('play');
+const body =  document.getElementById('body');
 const settings = document.getElementById('settings');
 
 let settings_conteiner = document.getElementById('settings_conteiner')
@@ -25,6 +26,17 @@ play.addEventListener('click', () => {
     menu_conteiner.style.display = 'none';
     Start();
 });
+
+let flag = 0;
+body.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && flag === 0) {
+        game_conteiner.style.display = 'block';
+        menu_conteiner.style.display = 'none';
+        Start();
+        flag = 1;
+    }
+});
+
 
 settings.addEventListener('click', () => {
     for(let i = 0; i < menu_buttons.length; i++)
