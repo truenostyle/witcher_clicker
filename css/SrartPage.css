@@ -3,13 +3,13 @@ html, body {
   height: 100%;
   margin: 0;
   overflow-y: hidden;
-  /*background-image:url('./Фото_Видео/ClickHere.jpg');*/
+  background-image:url('../photo/background/menu-background.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   transition: filter 0.5s ease-in-out;
 } 
 
-/*
+
 #myVideo {
   position: fixed;
   right: 0;
@@ -23,9 +23,9 @@ html, body {
   height: 10px;
   position: absolute; 
   bottom: 0px;
-  background: rgb(87, 129, 96);
+  background: brown;
   animation-name: big;
-  animation-duration: 10s;  
+  animation-duration: 27s;  
 } 
 
 @keyframes big {
@@ -35,7 +35,7 @@ to {width: 100%; height: 10px; visibility: hidden}
 
 .videoIndex{ 
 animation-name: lol;
-animation-duration: 234s;  
+animation-duration: 25s;  
 } 
 
 @keyframes lol {
@@ -66,10 +66,10 @@ img.rot {
 position: absolute;
 margin-top: 5%; 
 margin-left: 35%; 
-animation-delay: 1s; 
+animation-delay: 5s; 
 visibility:hidden;
 animation-name: p_zoomIMGAnim;
-animation-duration: 250s;
+animation-duration: 125s;
 }
 
 @keyframes p_zoomIMGAnim {
@@ -78,4 +78,4 @@ to {visibility: visible}
 }
 
 .zoomIMG { transition: transform 1.5s; }
-.zoomIMG:hover { transform: scale(1.3); }*/ 
+.zoomIMG:hover { transform: scale(1.3); }
