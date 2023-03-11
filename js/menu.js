@@ -21,6 +21,8 @@ let brightness = brightRange.value;
 let theme = document.getElementById('theme');
 let menu_back = document.getElementById('menu');
 
+const difficutly = document.getElementById('difficutly');
+
 play.addEventListener('click', () => {
     game_conteiner.style.display = 'block';
     menu_conteiner.style.display = 'none';
@@ -114,3 +116,12 @@ theme.addEventListener('change', () => {
         menu_back.style.backgroundColor = 'black';
     }
 });
+
+difficutly.addEventListener('change', () => {
+    if(difficutly.checked)
+    {
+
+    } else {
+        
+    }
+})

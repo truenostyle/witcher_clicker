@@ -4,6 +4,7 @@
 
     var imageUrl = "./photo/enemies/dog.png";
 
+    
     class Enemy {
     constructor() {
     this.health = 100;
@@ -35,6 +36,10 @@
     this.progressBar.style.width = percentage;
     this.progressBar.innerText = percentage;
 
+    this.element.addEventListener('click', () => {
+        shakeImage(this);
+      });
+
     let randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1; 
     if (randomNum === 3 || randomNum === 6) {
         Pers_HP -= damage;  
@@ -46,6 +51,8 @@
     }
     });
 }
+
+
 
 randomPosition(min, max) {
     const num = Math.floor(Math.random() * (max - min + 1) + min);
@@ -68,12 +75,17 @@ randomPosition(min, max) {
         return num;
     }
 }
+
 }
+
+
+let enemies = [];
 
 //START
 function Start() {
     for (let i = 0; i < 5; i++) {
-        new Enemy();
+        const enemy = new Enemy();
+        enemies.push(enemy);
     }
 }  
 
