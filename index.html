@@ -3,15 +3,67 @@
         <meta charset="utf-8">
         <script defer src="./js/audio.js"></script>
         <script defer src="./js/main.js"></script>
+        <script defer src="./js/menu.js"></script>
         <script defer src="./js/hits.js"></script>
         <script defer src="./js/creating-healpotion.js"></script>
         <link rel="stylesheet" href="./css/checkbox.css"> 
         <link rel="stylesheet" href="./css/StyleMain.css">  
+        <link rel="stylesheet" href="./css/SrartPage.css"> 
+        <link rel="stylesheet" href="./css/StyleMenu.css"> 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
 
 
     <body id="body">  
+
+        <div id="menu_conteiner">
+            <div id="menu">
+                <button id="play" class="menu_buttons">ИГРАТЬ</button>
+                <button id="settings" class="menu_buttons">НАСТРОЙКИ</button>
+                <button id="saves" class="menu_buttons">СОХРАНЕНИЯ</button>
+                <button id="exit" class="menu_buttons">ВЫХОД</button>
+                <div id="settings_conteiner">
+                    <label>
+                        <input type="checkbox" id="theme">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Светлая тема</span>
+                    </label>    
+
+                    <div class="range-control">
+                        <span class="checkbox-label">Яркость</span>
+                        <input id="bright_range" type="range" min="10" max="190" value="100" class="slider">
+                      </div>
+
+                    <label>
+                        <input type="checkbox" id="sounds" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Звуки</span>
+                    </label>               
+                    <label>
+                        <input type="checkbox" id="switch-music" onchange="change()">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Музыка</span>
+                    </label>
+                    <div class="range-control">
+                        <span class="checkbox-label">Громкость звука</span>
+                        <input id="volume_range" type="range" min="0" max="10" value="3" class="slider">
+                      </div>
+
+                      <div class="range-control">
+                        <span class="checkbox-label">Громкость музыки</span>
+                        <input id="music_range" type="range" min="0" max="10" value="3" class="slider">
+                      </div>
+
+                      <button id="back">НАЗАД</button>
+                      
+                </div>
+            </div>
+            
+           
+        </div>
+
+
+
 <!--
         <video class="videoIndex" style="visibility:hidden; animation-delay: 3s" autoplay muted loop id="myVideo"> 
             <source src="./video/The Witcher 3.mp4" type="video/mp4"> 
@@ -24,7 +76,7 @@
         <p id="p_zoomIMG"><a href="./ChoisePers.html">
             <img class="zoomIMG" src="./Фото_Видео/Click Here.png" border="0"></a>
         </p> -->
-
+    <div id="game_conteiner">
         <img id="img_sword" src="./photo/items/sword.png"/> 
 
         <div style="position: absolute;  width: 300px; top: 20%;" id="chydo1" onclick="fight_chydo()"> 
@@ -48,17 +100,13 @@
             <img class="img_enemy" onclick="fight_dog()" src="./photo/enemies/dog.png"/>
         </div>  
 
-        <label>
-            <input type="checkbox" id="switch-music" onchange="change()">
-            <span class="checkbox-custom"></span>
-            <span class="checkbox-label">MUSIC</span>
-        </label>
+       
 
         <audio id="myAudio" src="./sounds/music.mp3" autoplay loop></audio>  
 
         <div class="w3-light-grey" style="position: absolute; width: 15%; margin-left: 5%; bottom: 10%;"> 
             <div id="myBar" class="w3-red w3-center" style=" width:100%">100%</div>
         </div> 
-
+    </div>
     </body>
 </html>
