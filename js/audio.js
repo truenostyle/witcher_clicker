@@ -14,7 +14,7 @@ function change() {
 }
 
 
-let hit = document.getElementsByClassName("img_enemy");
+let hit = document.getElementsByClassName("img_enemy2");
 
 for (let i = 0; i < hit.length; i++)
 {

@@ -23,7 +23,8 @@ let menu_back = document.getElementById('menu');
 play.addEventListener('click', () => {
     game_conteiner.style.display = 'block';
     menu_conteiner.style.display = 'none';
-  });
+    Start();
+});
 
 settings.addEventListener('click', () => {
     for(let i = 0; i < menu_buttons.length; i++)
@@ -51,7 +52,7 @@ rangeInput.addEventListener('input', () => {
             resultRangeVolume = rangeInput.value;
         }
     hit1Audio.volume = resultRangeVolume;
-  });
+});
 
 rangeMusic.addEventListener('input', ()=>{
     musicRangeVolume = rangeMusic.value / 10;
@@ -59,7 +60,7 @@ rangeMusic.addEventListener('input', ()=>{
 });
 
 
-  checkSounds.addEventListener('change', () => {
+checkSounds.addEventListener('change', () => {
     if (checkSounds.checked) {
         resultRangeVolume = rangeInput.value;
         rangeInput.disabled = false;
@@ -69,13 +70,12 @@ rangeMusic.addEventListener('input', ()=>{
         }
         else {
             resultRangeVolume = rangeInput.value;
-        }
-       
+        } 
     } else {
         resultRangeVolume = 0;
         rangeInput.disabled = true;
     }
-  });
+});
 
 
 brightRange.addEventListener('input', () => {
@@ -85,20 +85,20 @@ brightRange.addEventListener('input', () => {
 
 function updateBrightness() {
     document.body.style.filter = `brightness(${brightness}%)`;
-  };
-  
+}; 
+
 theme.addEventListener('change', () => {
     if (theme.checked) {
         menu_back.style.backgroundColor = 'rgb(216, 216, 216)';
-      for (let i = 0; menu_buttons.length;i++)
-      {
-         menu_buttons.style.backgroundColor = 'rgb(216, 216, 216)';
-      }
+    for (let i = 0; menu_buttons.length;i++)
+        {
+            menu_buttons.style.backgroundColor = 'rgb(216, 216, 216)';
+        }
     } else { 
         for (let i = 0; menu_buttons.length;i++)
         {
-          menu_buttons.style.backgroundColor = 'black';
+            menu_buttons.style.backgroundColor = 'black';
         }
         menu_back.style.backgroundColor = 'black';
     }
-  });
+});

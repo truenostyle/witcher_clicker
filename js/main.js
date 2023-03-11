@@ -1,15 +1,16 @@
 'use strict'
     var damage = 10; 
+    var Pers_HP = 100;
 
     var imageUrl = "./photo/enemies/dog.png";
- 
+
     class Enemy {
-  constructor() {
+    constructor() {
     this.health = 100;
-    this.damage = 25;
+    this.damage = 25; 
     this.element = document.createElement('div');
-    this.element.style.width = '150px';
-    this.element.style.height = '150px';  
+    this.element.classList.add('img_enemy2');
+
     this.element.style.position = 'absolute';
     this.element.style.top = this.randomPosition(0, window.innerHeight - 150) + 'px';
     this.element.style.left = this.randomPosition(0, window.innerWidth - 150) + 'px';
@@ -28,17 +29,25 @@
     this.progressBar.innerText = '100%';
     this.element.appendChild(this.progressBar);
     this.element.addEventListener('click', () => {
+        
     this.health -= damage;
     const percentage = this.health + '%';
     this.progressBar.style.width = percentage;
     this.progressBar.innerText = percentage;
+
+    let randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1; 
+    if (randomNum === 3 || randomNum === 6) {
+        Pers_HP -= damage;  
+        Pers_damage(Pers_HP) ;
+    }
+
     if (this.health <= 0) {
         this.element.remove();
-      }
+    }
     });
-  }
+}
 
-  randomPosition(min, max) {
+randomPosition(min, max) {
     const num = Math.floor(Math.random() * (max - min + 1) + min);
     const otherEnemies = document.querySelectorAll('.enemy');
     let overlap = false;
@@ -51,24 +60,43 @@
     if (distance < 50) {
         overlap = true;
         break;
-      }
+    }
     }
     if (overlap) {
-      return this.randomPosition(min, max);
+        return this.randomPosition(min, max);
     } else {
-      return num;
+        return num;
     }
-  }
+}
 }
 
-for (let i = 0; i < 5; i++) {
-  new Enemy();
-}
+//START
+function Start() {
+    for (let i = 0; i < 5; i++) {
+        new Enemy();
+    }
+}  
 
- 
-
-
-
+function Pers_damage(hp) {
+    if (hp <= 0) 
+    {
+        hp = 100;
+        Pers_HP = 100;
+        alert("game over");
+        /*
+        elem2.style.visibility = "visible";
+        elem21.style.visibility = "visible";
+        elem22.style.visibility = "visible";
+        chydo1.width = 100;
+        chydo2.width = 100;
+        dog1.width = 100;*/
+    }
+    
+    var elem = document.getElementById("myBar");    
+    elem.style.width = hp + '%'; 
+    elem.innerHTML = hp * 1  + '%';  
+    //localStorage.setItem('pers.hp', pers.hp); 
+}  
 
 
 
