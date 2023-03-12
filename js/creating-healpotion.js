@@ -90,13 +90,13 @@ function creating_items()
         document.body.appendChild(images[i]);
     }
     
-    let intervalHP = setInterval(checkHP, 3000);
+    let intervalHP = setInterval(checkHP, 5000);
     
     function checkHP()
     {
         if (hp_count <= images.length)
         {
-            if(pers.hp <= 35)
+            if(Pers_HP <= 35)
             {
                 images[hp_count].style.display = 'block';
                 hp_count++;
@@ -116,17 +116,17 @@ function creating_items()
             healAudio.play();
             images[i].style.display = 'none';
     
-            if(pers.hp <= 80)
+            if(Pers_HP <= 80)
             {
-                pers.hp = pers.hp + 20;
-            } else if (pers.hp >= 81 && pers.hp <= 99)
+                Pers_HP = Pers_HP + 20;
+            } else if (Pers_HP >= 81 && Pers_HP <= 99)
             {
-                pers.hp = 100;
-            } else if (pers.hp >= 100)
+                Pers_HP = 100;
+            } else if (Pers_HP >= 100)
             {
-                pers.hp = 100;
+                Pers_HP = 100;
             }
-            Pers_damage(pers.hp) ;
+            Pers_damage(Pers_HP) ;
         });
     }
 }

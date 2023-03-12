@@ -22,30 +22,26 @@ const upgrade_damage = [];
 upgradesAll.forEach(div => {
     const h2 = div.querySelector('h2'); 
     upgrade_prices.push(h2.textContent); 
-  });
+});
 
-  upgradesAll.forEach(div => {
+upgradesAll.forEach(div => {
     const h3 = div.querySelector('h3'); 
     upgrade_damage.push(h3.textContent); 
-  });
+});
 
 for(let i = 0; i <upgradesBlocks.length; i++)
 {
     let price_amount = upgrade_prices[i].match(/\d+/)[0];
     let dmg_amount = upgrade_damage[i].match(/\d+/)[0];
     upgradesBlocks[i].addEventListener('click', () => {
-    if (price_amount > balance)
-    {
-        noMoney.style.visibility = 'visible';
-    }
+    if (price_amount > balance) noMoney.style.visibility = 'visible'; 
     else {
         upgradesBlocks[i].style.backgroundColor = 'rgb(99, 99, 99)';
         damage = Number(damage) + Number(dmg_amount);
         balance = Number(balance) - Number(price_amount);
         balance_field.innerHTML = balance + "💰";
-    }  
-     });
-     
+        }  
+    });
 }
 
 noMoney_ok.addEventListener('click', () => {
