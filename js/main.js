@@ -35,10 +35,12 @@
     const percentage = this.health + '%';
     this.progressBar.style.width = percentage;
     this.progressBar.innerText = percentage;
+    this.enemyActions();
+    const hitSound = new Audio('./sounds/sword-hit-2.mp3');
+    hitSound.volume = resultRangeVolume;
+    console.log(hitSound.volume);
+    hitSound.play();
 
-    this.element.addEventListener('click', () => {
-        shakeImage(this);
-      });
 
     let randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1; 
     if (randomNum === 3 || randomNum === 6) {
@@ -52,7 +54,20 @@
     });
 }
 
+enemyActions() {
+    let intervalId;
+    let x = 0;
 
+    intervalId = setInterval(() => {
+      x = x + ((Math.random() * 0.4) + 0.1);
+      let y = Math.sin(x) * 10;
+      this.element.style.transform = "translate(" + y + "px, " + y + "px)";
+      if (x >= 3) {
+        clearInterval(intervalId);
+        this.element.style.transform = "none";
+      }
+    }, 20);
+  }
 
 randomPosition(min, max) {
     const num = Math.floor(Math.random() * (max - min + 1) + min);
@@ -87,6 +102,7 @@ function Start() {
         const enemy = new Enemy();
         enemies.push(enemy);
     }
+
 }  
 
 function Pers_damage(hp) {

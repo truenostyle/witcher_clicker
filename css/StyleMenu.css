@@ -53,7 +53,149 @@
     margin: 10px;
     padding: 0;
   }
-  
+
+#upgradeShop-conteiner {
+    background-color: black;
+    width: 60%;
+    height: 55%;
+    position: absolute;
+    z-index: 9997;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    border: gold 1px solid;
+    text-align: center;
+    display: none;
+}
+
+#shop-conteiners {
+    width: 80%;
+    height: 70%;
+    position: relative;
+    z-index: 9998;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -57%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upgrades {
+    width: 22%;
+    height: 40%;
+    background-color: rgb(44, 44, 44);
+    margin: 10px;
+  }
+
+#upgradeShop-conteiner h1 {
+    color: white;   
+    z-index: 9998;
+    display: inline-block;
+}
+
+#balance {
+    color: white;
+    display: inline-block;
+    margin-left: 50%;
+}
+
+
+#upgradeShop-conteiner button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.upgrades img {
+    width: 100%;
+    height: 80%;
+    border-bottom: black 1px solid;
+}
+
+.upgrades h2 {
+    color: white;
+    font-size: 20px;
+    display: inline;
+    margin-right: 16px;
+}
+
+.upgrades h3 {
+    color: white;
+    font-size: 20px;
+    display: inline;
+    margin-left: 16px;
+}
+
+#no_money {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border: gold 1px solid;
+    z-index: 9999;
+    color: white;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    visibility: hidden; 
+    
+}
+
+#no_money button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 30px 2px;
+    cursor: pointer;
+}
+
+#no_money h1 {
+    margin-top: 20px;
+}
+
+#exit_ask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border: gold 1px solid;
+    z-index: 9999;
+    color: white;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    visibility: hidden;
+}
+
+#exit_ask button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 30px 2px;
+    cursor: pointer;
+}
+
+
+
+
+
 
   
 

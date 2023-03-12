@@ -23,6 +23,10 @@ let menu_back = document.getElementById('menu');
 
 const difficutly = document.getElementById('difficutly');
 
+const upgradeShop = document.getElementById('upgradeShop');
+let upgradeConteiner = document.getElementById('upgradeShop-conteiner');
+let upgradeBack = document.getElementById('upgrade-back');
+
 play.addEventListener('click', () => {
     game_conteiner.style.display = 'block';
     menu_conteiner.style.display = 'none';
@@ -125,3 +129,12 @@ difficutly.addEventListener('change', () => {
         
     }
 })
+
+upgradeShop.addEventListener('click', () => {
+    upgradeConteiner.style.display = 'block';
+    menu_back.style.display = 'none';
+});
+upgradeBack.addEventListener('click', () => {
+    upgradeConteiner.style.display = 'none';
+    menu_back.style.display = 'flex';
+});

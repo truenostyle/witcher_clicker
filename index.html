@@ -6,6 +6,7 @@
         <script defer src="./js/menu.js"></script>
         <script defer src="./js/hits.js"></script>
         <script defer src="./js/creating-healpotion.js"></script>
+        <script defer src="./js/upgrade-shop.js"></script>
         <link rel="stylesheet" href="./css/checkbox.css"> 
         <link rel="stylesheet" href="./css/StyleMain.css">  
         <link rel="stylesheet" href="./css/SrartPage.css">  
@@ -16,9 +17,26 @@
 
     <body id="body">  
 
+        <div id="no_money"><h1>Недостаточно средств</h1><button id="noMoney_ok">OK</button></div>
+        <div id="upgradeShop-conteiner">
+            <h1 >UPGRADES</h1>
+            <h2 id="balance"></h2>
+            <div id="shop-conteiners"> 
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">200💰</h2><h3>10⚔️</h3></div>
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">100💰</h2><h3>30⚔️</h3></div>
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">50💰</h2><h3>25⚔️</h3></div>
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">150💰</h2><h3>5⚔️</h3></div>
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">100💰</h2><h3>20⚔️</h3></div>
+             <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">300💰</h2><h3>15⚔️</h3></div>
+              <div class="upgrades"><img src="./photo/items/sword-2lvl.png"><h2 id="price_sword_2lvl">50💰</h2><h3>30⚔️</h3></div>
+             </div>
+        <button id="upgrade-back">НАЗАД</button> 
+        </div>
+
         <div id="menu_conteiner">
             <div id="menu">
                 <button id="play" class="menu_buttons">ИГРАТЬ</button>
+                <button id="upgradeShop" class="menu_buttons">МАГАЗИН УЛУЧШЕНИЙ</button>
                 <button id="settings" class="menu_buttons">НАСТРОЙКИ</button>
                 <button id="saves" class="menu_buttons">СОХРАНЕНИЯ</button>
                 <button id="exit" class="menu_buttons">ВЫХОД</button>
@@ -67,6 +85,7 @@
             </div> 
         </div>
 
+      
 
 
     <!-- 
@@ -85,6 +104,13 @@
 
 
     <div id="game_conteiner"> 
+
+        <div id="open_menu"><img src="./photo/exit.png"></div>
+
+        <div id="exit_ask"><h1>Вы уверены, что хотите выйти?</h1>
+            <button id="exit_yes">YES</button>
+            <button id="exit_cancel">CANCEL</button></div>
+
         <img id="img_sword" src="./photo/items/sword.png"/> 
 
         <div style="position: absolute;  width: 300px; top: 20%;" id="chydo1" onclick="fight_chydo()"> 
