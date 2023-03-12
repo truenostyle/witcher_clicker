@@ -188,7 +188,7 @@ function check_Level()
         CountEnemyDie = 0;
         var backgroundImg = document.getElementById("body");  
         backgroundImg.style.backgroundImage = "url('" + Level_ImageUrl[Level] + "')";
-        balance = 100;
+        balance += Level_balance[Level];
         balance_field.innerHTML = balance + "💰";
         Start();
     }
