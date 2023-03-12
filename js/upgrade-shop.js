@@ -1,4 +1,4 @@
-let balance = 300;
+let balance = 1000;
 
 let balance_field = document.getElementById('balance');
 
@@ -11,10 +11,8 @@ let noMoney = document.getElementById('no_money');
 
 let noMoney_ok = document.getElementById('noMoney_ok');
 
-let exit = document.getElementById('open_menu');
-let exit_ask = document.getElementById('exit_ask');
-let exit_yes = document.getElementById('exit_yes');
-let exit_cancel = document.getElementById('exit_cancel');
+let Img_Sword = document.getElementById('img_sword');
+
 
 const upgrade_prices = []; 
 const upgrade_damage = [];
@@ -29,33 +27,38 @@ upgradesAll.forEach(div => {
     upgrade_damage.push(h3.textContent); 
 });
 
+
+let chek_sword = [0,0,0,0,0,0,0];
+let last_sword = -1;
 for(let i = 0; i <upgradesBlocks.length; i++)
 {
     let price_amount = upgrade_prices[i].match(/\d+/)[0];
     let dmg_amount = upgrade_damage[i].match(/\d+/)[0];
     upgradesBlocks[i].addEventListener('click', () => {
-    if (price_amount > balance) noMoney.style.visibility = 'visible'; 
-    else {
-        upgradesBlocks[i].style.backgroundColor = 'rgb(99, 99, 99)';
-        damage = Number(damage) + Number(dmg_amount);
+    if (chek_sword[i] === 1) 
+    {
+        Img_Sword.src = upgradesBlocks[i].querySelector('.upgrades img').src;  
+        Pers_Damage = Number(dmg_amount);
+        upgradesBlocks[i].style.backgroundColor = 'rgb(255, 50, 50)';
+        if (last_sword !== i) upgradesBlocks[last_sword].style.backgroundColor = 'rgb(99, 99, 99)'; 
+        last_sword = i;
+    }
+    else if (price_amount > balance) noMoney.style.visibility = 'visible'; 
+    else {     
+        last_sword = i;
+        Img_Sword.src = upgradesBlocks[i].querySelector('.upgrades img').src; 
+        upgradesBlocks[i].style.backgroundColor = 'rgb(255, 50, 50)';
+        upgradesBlocks[last_sword].style.backgroundColor = 'rgb(99, 99, 99)'; 
         balance = Number(balance) - Number(price_amount);
         balance_field.innerHTML = balance + "💰";
+        chek_sword[i]++;
+        Pers_Damage = Number(dmg_amount); 
         }  
-    });
+    }
+    );
 }
 
 noMoney_ok.addEventListener('click', () => {
     noMoney.style.visibility = 'hidden';
 });
 
-exit.addEventListener('click', () => {
-    exit_ask.style.visibility = 'visible';
-    exit_yes.addEventListener('click', () => {
-        game_conteiner.style.display = 'none';
-        menu_conteiner.style.display = 'block';
-    });
-    exit_cancel.addEventListener('click', () => {
-        exit_ask.style.visibility = 'hidden';
-    });
-    
-});

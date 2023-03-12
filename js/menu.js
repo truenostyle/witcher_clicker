@@ -18,7 +18,7 @@ let checkSounds = document.getElementById('sounds');
 const brightRange = document.getElementById('bright_range');
 let brightness = brightRange.value;
 
-let theme = document.getElementById('theme');
+let theme = document.getElementById('theme'); 
 let menu_back = document.getElementById('menu');
 
 const difficutly = document.getElementById('difficutly');
@@ -122,11 +122,13 @@ theme.addEventListener('change', () => {
 });
 
 difficutly.addEventListener('change', () => {
-    if(difficutly.checked)
-    {
-
-    } else {
-        
+    if(difficutly.checked) {
+        Enemy_Damage = [ 20, 25, 30, 35, 40, 43, 46, 50, 60, 70];
+        Enemy_HP = [ 200, 215, 225, 255, 300, 333, 450, 700, 950, 1500];
+    } 
+    else {
+        Enemy_Damage = [ 10, 15, 20, 25, 30, 33, 36, 40, 50, 60];
+        Enemy_HP = [ 100, 115, 125, 155, 200, 233, 350, 400, 650, 1000];
     }
 })
 
@@ -137,4 +139,27 @@ upgradeShop.addEventListener('click', () => {
 upgradeBack.addEventListener('click', () => {
     upgradeConteiner.style.display = 'none';
     menu_back.style.display = 'flex';
+});
+
+
+let exit = document.getElementById('open_menu');
+let exit_ask = document.getElementById('exit_ask');
+let exit_yes = document.getElementById('exit_yes');
+let exit_cancel = document.getElementById('exit_cancel');
+
+exit.addEventListener('click', () => {
+    exit_ask.style.visibility = 'visible'; 
+    exit_yes.addEventListener('click', () => {
+        game_conteiner.style.display = 'none';
+        menu_conteiner.style.display = 'block';
+
+        const elementsToDelete = document.querySelectorAll('.img_enemy2'); 
+            elementsToDelete.forEach((element) => {
+            element.remove();
+        }); 
+    });
+    exit_cancel.addEventListener('click', () => {
+        exit_ask.style.visibility = 'hidden';
+    });
+    
 });
