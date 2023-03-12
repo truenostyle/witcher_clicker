@@ -28,6 +28,10 @@ let upgradeConteiner = document.getElementById('upgradeShop-conteiner');
 let upgradeBack = document.getElementById('upgrade-back');
 
 play.addEventListener('click', () => {
+    if (exit_ask.style.visibility === 'visible' )
+    {
+        exit_ask.style.visibility = 'hidden'; 
+    }
     game_conteiner.style.display = 'block';
     menu_conteiner.style.display = 'none';
     Start();

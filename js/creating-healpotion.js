@@ -96,7 +96,7 @@ function creating_items()
     {
         if (hp_count <= images.length)
         {
-            if(Pers_HP <= 35)
+            if(Pers_HP <= 100)
             {
                 images[hp_count].style.display = 'block';
                 hp_count++;
