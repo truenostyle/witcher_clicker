@@ -192,8 +192,54 @@
     cursor: pointer;
 }
 
+#saves-conteiner {
+    width: 40%;
+    height: 80%;
+    background-color: black;
+    border: gold 1px solid;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
 
+#saves-conteiner h1 {
+    color: white;
+}
 
+#saves-conteiner button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 26px;
+    margin: 65px 2px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+#saves-blocks {
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#saves-blocks div {
+    width: 100%;
+    height: 30%;
+    margin-bottom: 3%;
+    border-bottom: 1px gold solid;
+    border-top:1px gold solid;
+    background-color: rgb(44, 44, 44);;
+}
 
 
 

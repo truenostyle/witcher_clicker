@@ -5,6 +5,7 @@
         <script defer src="./js/main.js"></script>
         <script defer src="./js/menu.js"></script>
         <script defer src="./js/hits.js"></script>
+        <script defer src="./js/saves.js"></script>
         <script defer src="./js/creating-healpotion.js"></script>
         <script defer src="./js/upgrade-shop.js"></script>
         <link rel="stylesheet" href="./css/checkbox.css"> 
@@ -18,8 +19,19 @@
     <body id="body">  
 
         <div id="no_money"><h1>Недостаточно средств</h1><button id="noMoney_ok">OK</button></div>
+
+        <div id="saves-conteiner">
+            <h1>СОХРАНЕНИЯ</h1>
+            <div id="saves-blocks">
+                <div class="saves-block"></div>
+                <div class="saves-block"></div>
+                <div class="saves-block"></div>
+            </div>
+            <button id="saves-back">НАЗАД</button> 
+        </div>
+
         <div id="upgradeShop-conteiner">
-            <h1 >UPGRADES</h1>
+            <h1 >УЛУЧШЕНИЯ</h1>
             <h2 id="balance"></h2>
             <div id="shop-conteiners"> 
             <div class="upgrades"><img src="./photo/items/sword 1.png"><h2 id="price_sword_2lvl">100💰</h2><h3>15⚔️</h3></div>
@@ -31,9 +43,9 @@
             <div class="upgrades"><img src="./photo/items/sword 7.png"><h2 id="price_sword_2lvl">1000💰</h2><h3>60</h3>⚔️</h3></div>
             </div>
         <button id="upgrade-back">НАЗАД</button> 
-        </div>
+         </div>
 
-        <div id="menu_conteiner">
+         <div id="menu_conteiner">
             <div id="menu">
                 <button id="play" class="menu_buttons">ИГРАТЬ</button>
                 <button id="upgradeShop" class="menu_buttons">МАГАЗИН УЛУЧШЕНИЙ</button>
@@ -83,16 +95,15 @@
                     <button id="back">НАЗАД</button> 
                 </div>
             </div> 
-        </div>
+            </div>
 
-
-    <div id="game_conteiner">  
+         <div id="game_conteiner">  
         <div id="open_menu"><img src="./photo/exit.png"></div>
 
         <div id="exit_ask">
             <h1>Вы уверены, что хотите выйти?</h1>
-            <button id="exit_yes">YES</button>
-            <button id="exit_cancel">CANCEL</button>
+            <button id="exit_yes">ДА</button>
+            <button id="exit_cancel">ОТМЕНА</button>
         </div>
 
         <img id="img_sword" src="./photo/items/sword defolt.png"/> 
@@ -103,6 +114,8 @@
         <div class="w3-light-grey" style="position: absolute; width: 15%; margin-left: 5%; bottom: 10%;"> 
             <div id="myBar" class="w3-red w3-center" style=" width:100%">100%</div>
         </div> 
-    </div>
+         </div>
+
+         
     </body>
 </html>

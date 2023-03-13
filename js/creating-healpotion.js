@@ -2,75 +2,21 @@
 
 let game_conteiner = document.getElementById("game_conteiner");
 game_conteiner.style.display = 'none';
-let intervalMENU = setInterval(checkMENU, 3000);
-    
-    
-function checkMENU()
-{
-    if (game_conteiner.style.visibility === "collapse")
-    {
-        creating_items(); 
-        clearInterval(intervalMENU);
-    }
-}
 
-
-
+let images = []; 
+let hp_count = 0;
 function creating_items()
-{
-    let dmgimages = [];
-    let hp_count = 0;
-    let dmg_count = 0;
-    for (let i = 0; i < 5; i++) {
-        let img2 = new Image(); 
-        img2.src = './photo/items/dmgpotion.png'; 
-        dmgimages.push(img2); 
-    }
-    
-    for(let i = 0; i < 5; i++)
+{   
+    if(images.length > 0)
     {
-        dmgimages[i].style.display = 'none';
-        dmgimages[i].style.position = "absolute";
-        dmgimages[i].style.width = "100px";
-        dmgimages[i].style.height = "100px";
-        dmgimages[i].style.top = Math.floor(Math.random() * (window.innerHeight - "100")) + "px";
-        dmgimages[i].style.left = Math.floor(Math.random() * (window.innerWidth  - "100")) + "px";
-        document.body.appendChild(dmgimages[i]);
-    }
-    
-    
-    for (let i = 0; i < dmgimages.length; i++)
-    {
-        dmgimages[i].addEventListener("click", function(event) {
-            const healAudio = new Audio('./sounds/drink.mp3');
-            healAudio.volume = 0.3;
-            healAudio.play();
-            dmgimages[i].style.display = 'none';
-            pers.damage = pers.damage + 10;
-        });
-    }
-    
-    let intervalDMG = setInterval(checkDMG, 3000);
-    
-    
-    function checkDMG()
-    {
-        if (dmg_count <= dmgimages.length)
+        for(let i = 0; i < images.length; i++)
         {
-        if(Math.round(Math.random()) === 1)
-            {
-                dmgimages[dmg_count].style.display = 'block';
-                dmg_count++;
-            }  
-        }
-        else {
-            clearInterval(intervalDMG);
+            images[i].style.display = 'none';
         }
     }
-    
-    
-    let images = []; 
-    
+
+    images.splice(0, images.length);
+    hp_count = 0;
     
     for (let i = 0; i < 5; i++) {
         let img = new Image(); 
@@ -96,7 +42,7 @@ function creating_items()
     {
         if (hp_count <= images.length)
         {
-            if(Pers_HP <= 100)
+            if(Pers_HP <= 90)
             {
                 images[hp_count].style.display = 'block';
                 hp_count++;

@@ -157,6 +157,17 @@ exit.addEventListener('click', () => {
         game_conteiner.style.display = 'none';
         menu_conteiner.style.display = 'block';
 
+        if(images.length > 0)
+        {
+            for(let i = 0; i < images.length; i++)
+            {
+                images[i].style.display = 'none';
+            }
+        }
+    
+        images.splice(0, images.length);
+        hp_count = 0;
+
         const elementsToDelete = document.querySelectorAll('.img_enemy2'); 
             elementsToDelete.forEach((element) => {
             element.remove();

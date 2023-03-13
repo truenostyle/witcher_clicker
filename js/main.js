@@ -164,6 +164,8 @@ function Start() {
         const enemy = new Enemy();
         enemies.push(enemy);
     }
+    startTimer()
+    creating_items();
     alert(Level_Text[Level]);
 }  
 
@@ -172,6 +174,7 @@ function Pers_damage(hp) {
     {
         hp = 100;
         Pers_HP = 100;
+        alert(lvl_time.join("\n"));
         alert("game over"); 
     }
     
@@ -181,8 +184,15 @@ function Pers_damage(hp) {
     //localStorage.setItem('pers.hp', pers.hp); 
 }  
 
+
+
 function check_Level()
 {
+
+    if (Level === 9)
+    {
+        alert(lvl_time.join("\n"));
+    }
     if (CountEnemyDie === Enemy_Spavn[Level]) {
         Level++;
         CountEnemyDie = 0;
@@ -190,6 +200,32 @@ function check_Level()
         backgroundImg.style.backgroundImage = "url('" + Level_ImageUrl[Level] + "')";
         balance += Level_balance[Level];
         balance_field.innerHTML = balance + "💰";
+        stopTimer()
         Start();
     }
 } 
+
+let lvl_time = [];
+
+let seconds = 0;
+let minutes = 0;
+let timerInterval;
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    seconds++;
+    if (seconds == 60) {
+      seconds = 0;
+      minutes++;
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  let result_to_push = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  alert(result_to_push)
+  lvl_time.push("Level " + Level + " - " + result_to_push);
+  seconds = 0;
+  minutes = 0;
+}
