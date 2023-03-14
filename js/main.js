@@ -224,7 +224,6 @@ function startTimer() {
 function stopTimer() {
   clearInterval(timerInterval);
   let result_to_push = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  alert(result_to_push)
   lvl_time.push("Level " + Level + " - " + result_to_push);
   seconds = 0;
   minutes = 0;
