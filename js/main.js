@@ -98,7 +98,6 @@
     this.enemyActions();
     const hitSound = new Audio('./sounds/sword-hit-2.mp3');
     hitSound.volume = resultRangeVolume;
-    console.log(hitSound.volume);
     hitSound.play();
 
 
@@ -188,9 +187,17 @@ function Pers_damage(hp) {
 }  
 
 
-function check_Level()
-{ 
-    if (Level === 9) alert(lvl_time.join("\n")); 
+function check_Level()  { 
+    if (Level === 9) alert(lvl_time.join("\n"));  
+{
+
+    if (Level === 9)
+    {
+        alert(lvl_time.join("\n"));
+        Level = 0;
+        game_conteiner.style.display = 'none';
+        menu_conteiner.style.display = 'block';
+    } 
     if (CountEnemyDie === Enemy_Spavn[Level]) {
         Level++;
         CountEnemyDie = 0;
