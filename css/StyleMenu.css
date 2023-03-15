@@ -243,7 +243,46 @@
     background-color: rgb(44, 44, 44);;
 }
 
+#prompt {
+    width: 15%;
+    height: 12%;
+    background-color: black;
+    z-index: 9999;
+    position: absolute;
+    right: 0;
+    border-left: 1px solid gold;
+    border-bottom: 1px solid gold;
+}
+#prompt h1{
+    color: white;
+    font-size: 14px;
+    margin-top: 0; /* Убираем верхний отступ */
+    margin-bottom: 0; /* Убираем нижний отступ */
+    margin-left: 5px;
+}
 
+#prompt h2 {
+    color: rgb(44, 44, 44);
+    margin-top: 0; /* Убираем верхний отступ */
+    margin-bottom: 0; /* Убираем нижний отступ */
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#show_prompt_block {
+    position: absolute;
+    right: 100px;
+    color: black;
+    width: 25px;
+    height: 10px;
+    font-size: 14px;
+}
+
+#show_prompt_block h1 {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
 
   
 

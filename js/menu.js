@@ -8,6 +8,7 @@ const settings = document.getElementById('settings');
 let settings_conteiner = document.getElementById('settings_conteiner')
 let menu_buttons = document.getElementsByClassName('menu_buttons');
 
+
 const rangeInput = document.getElementById('volume_range');
 const rangeMusic = document.getElementById('music_range');
 let resultRangeVolume = rangeInput.value / 10;
@@ -20,12 +21,18 @@ let brightness = brightRange.value;
 
 let theme = document.getElementById('theme'); 
 let menu_back = document.getElementById('menu');
+const myButtons = menu_back.querySelectorAll('button');
 
 const difficutly = document.getElementById('difficutly');
 
 const upgradeShop = document.getElementById('upgradeShop');
 let upgradeConteiner = document.getElementById('upgradeShop-conteiner');
 let upgradeBack = document.getElementById('upgrade-back');
+
+let fullscreen = document.getElementById('fullscreen');
+
+let prompt = document.getElementById('prompt');
+let show_prompt = document.getElementById('show_prompt_block')
 
 play.addEventListener('click', () => {
     if (exit_ask.style.visibility === 'visible' )
@@ -109,19 +116,54 @@ function updateBrightness() {
     document.body.style.filter = `brightness(${brightness}%)`;
 }; 
 
+let upgrade_h1 = document.getElementById('upgrade_h1');
+let saves_h1 = document.getElementById('saves_h1');
+let checkbox_labels = document.getElementsByClassName('checkbox-label');
+
 theme.addEventListener('change', () => {
     if (theme.checked) {
         menu_back.style.backgroundColor = 'rgb(216, 216, 216)';
-    for (let i = 0; menu_buttons.length;i++)
+        upgradeConteiner.style.backgroundColor = 'rgb(216, 216, 216)';
+        upgrade_h1.style.color = 'black';
+        upgradeBack.style.backgroundColor = 'rgb(216, 216, 216)';
+        upgradeBack.style.color = 'black';
+        balance_field.style.color = 'black';
+        saves_conteiner.style.background = 'rgb(216, 216, 216)';
+        saves_h1.style.color = 'black';
+        saves_back.style.backgroundColor = 'rgb(216, 216, 216)';
+        saves_back.style.color = 'black';
+        for (let i = 0; i < checkbox_labels.length; i++)
+       {
+        console.log("TUT");
+        checkbox_labels[i].style.color = 'black';
+      }
+    for (let i = 0; myButtons.length;i++)
         {
-            menu_buttons.style.backgroundColor = 'rgb(216, 216, 216)';
+            myButtons[i].style.backgroundColor ='rgb(216, 216, 216)';
+            myButtons[i].style.color = 'black';
         }
+    
     } else { 
-        for (let i = 0; menu_buttons.length;i++)
-        {
-            menu_buttons.style.backgroundColor = 'black';
-        }
         menu_back.style.backgroundColor = 'black';
+        upgradeConteiner.style.backgroundColor = 'black';
+        upgrade_h1.style.color = 'white';
+        upgradeBack.style.backgroundColor = 'black';
+        upgradeBack.style.color = 'white';
+        balance_field.style.color = 'white';
+        saves_conteiner.style.background = 'black';
+        saves_h1.style.color = 'white';
+        saves_back.style.backgroundColor = 'black';
+        saves_back.style.color = 'white';
+        for (let i = 0; i < checkbox_labels.length; i++)
+        {
+         checkbox_labels[i].style.color = 'white';
+       }  
+        for (let i = 0; myButtons.length;i++)
+        {
+            myButtons[i].style.backgroundColor = 'black';
+            myButtons[i].style.color = 'white'
+        }
+             
     }
 });
 
@@ -145,6 +187,14 @@ upgradeBack.addEventListener('click', () => {
     menu_back.style.display = 'flex';
 });
 
+
+fullscreen.addEventListener('change', () => {
+    if (fullscreen.checked) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  });
 
 let exit = document.getElementById('open_menu');
 let exit_ask = document.getElementById('exit_ask');
@@ -178,3 +228,11 @@ exit.addEventListener('click', () => {
     });
     
 });
+
+prompt.addEventListener('click', () => {
+    prompt.style.display = 'none';
+})
+
+show_prompt.addEventListener('click', () => {
+    prompt.style.display = 'block';
+})

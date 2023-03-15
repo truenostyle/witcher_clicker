@@ -1,5 +1,4 @@
 'use strict'
-const hit1Audio = new Audio('./sounds/sword-hit-1.mp3');
 const musicAudio = document.getElementById("myAudio");
 
 function change() {
@@ -15,10 +14,9 @@ function change() {
 
 let hit = document.getElementsByClassName("img_enemy2");
 
-
-
 document.addEventListener("click", function(event) {
-    hit1Audio.volume = resultRangeVolume;
-    hit1Audio.play(); 
+    const hit2Sound = new Audio('./sounds/sword-hit-1.mp3');
+    hit2Sound.volume = resultRangeVolume;
+    hit2Sound.play();
     shakeImage(Sword);
 });  

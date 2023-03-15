@@ -21,7 +21,7 @@
         <div id="no_money"><h1>Недостаточно средств</h1><button id="noMoney_ok">OK</button></div>
 
         <div id="saves-conteiner">
-            <h1>СОХРАНЕНИЯ</h1>
+            <h1 id="saves_h1">СОХРАНЕНИЯ</h1>
             <div id="saves-blocks">
                 <div class="saves-block"></div>
                 <div class="saves-block"></div>
@@ -31,7 +31,7 @@
         </div>
 
         <div id="upgradeShop-conteiner">
-            <h1 >УЛУЧШЕНИЯ</h1>
+            <h1 id="upgrade_h1">УЛУЧШЕНИЯ</h1>
             <h2 id="balance"></h2>
             <div id="shop-conteiners"> 
             <div class="upgrades"><img src="./photo/items/sword 1.png"><h2 id="price_sword_2lvl">100💰</h2><h3>15⚔️</h3></div>
@@ -60,6 +60,12 @@
                         <span class="checkbox-label">Повышенная сложность</span><br>
                         <span class="checkbox-label">(по умолчанию легкая)</span>
                     </label>  
+
+                    <label>
+                        <input type="checkbox" id="fullscreen">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label">Полный экран</span>
+                    </label>   
 
                     <label>
                         <input type="checkbox" id="theme">
@@ -98,6 +104,12 @@
             </div>
 
          <div id="game_conteiner">  
+            <div id="prompt"><h1>ЛКМ - Атака</h1>
+                <h1>Для того, чтобы перейти на следующий уровень, нужно убить всех монстров.</h1>
+                <h1>Курочки восстанавливают здоровье</h1>
+                <h2>нажмите, чтобы скрыть</h2>
+            </div>
+            <div id="show_prompt_block"><h1>ПОДСКАЗКИ</h1></div>
         <div id="open_menu"><img src="./photo/exit.png"></div>
 
         <div id="exit_ask">

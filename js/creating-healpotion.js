@@ -1,6 +1,7 @@
 'use strict'
 
 let game_conteiner = document.getElementById("game_conteiner");
+
 game_conteiner.style.display = 'none';
 
 let images = []; 
