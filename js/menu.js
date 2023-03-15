@@ -168,6 +168,8 @@ exit.addEventListener('click', () => {
         images.splice(0, images.length);
         hp_count = 0;
 
+        CountEnemyDie = 0; 
+
         const elementsToDelete = document.querySelectorAll('.img_enemy2'); 
             elementsToDelete.forEach((element) => {
             element.remove();

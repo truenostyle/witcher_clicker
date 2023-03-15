@@ -1,10 +1,12 @@
 'use strict'
-    var Pers_Damage = 10; 
-    var Pers_HP_Start = 100;
-    var Pers_HP_Up = 0;
+    var Pers_Damage = 100; 
+    //LOCAL
+    const Pers_DamageLocal = localStorage.getItem('Pers_Damage'); 
+    if (Pers_DamageLocal !== null) Pers_Damage = parseInt(Pers_DamageLocal); 
 
-    var Pers_HP = Pers_HP_Start + Pers_HP_Up; 
+    var Pers_HP = 100; 
 
+    //localStorage.clear();
 
     let Enemy_ImageUrl = [
         './photo/enemies/dog.png',
@@ -60,8 +62,6 @@
     let Enemy_Spavn = [ 5, 7, 10, 5, 7, 4, 5, 3, 2, 1];
     let Level_balance = [ 100, 100, 100, 150, 150, 200, 200, 200, 200, 1000];
 
-
-
     var Level = 0;
     var CountEnemyDie = 0;
 
@@ -83,7 +83,6 @@
     img.style.width = '180px';
     img.style.height = '180px';
 
-    // Добавляем изображение в div
     this.element.appendChild(img);   
 
     this.progressBar = document.createElement('div');  
@@ -104,7 +103,7 @@
 
 
     let randomNum = Math.floor(Math.random() * (10 - 1 + 1)) + 1; 
-    if (randomNum === 3 || randomNum === 6) {
+    if (randomNum === 3) {
         Pers_HP -= Enemy_Damage[Level];  
         Pers_damage(Pers_HP) ;
     }
@@ -167,6 +166,11 @@ function Start() {
     startTimer()
     creating_items();
     alert(Level_Text[Level]);
+
+    Pers_HP = 100; 
+    var elem = document.getElementById("myBar");    
+    elem.style.width = Pers_HP + '%'; 
+    elem.innerHTML = Pers_HP * 1  + '%'; 
 }  
 
 function Pers_damage(hp) {
@@ -180,31 +184,30 @@ function Pers_damage(hp) {
     
     var elem = document.getElementById("myBar");    
     elem.style.width = hp + '%'; 
-    elem.innerHTML = hp * 1  + '%';  
-    //localStorage.setItem('pers.hp', pers.hp); 
+    elem.innerHTML = hp * 1  + '%';   
 }  
 
 
-
 function check_Level()
-{
-
-    if (Level === 9)
-    {
-        alert(lvl_time.join("\n"));
-    }
+{ 
+    if (Level === 9) alert(lvl_time.join("\n")); 
     if (CountEnemyDie === Enemy_Spavn[Level]) {
         Level++;
         CountEnemyDie = 0;
         var backgroundImg = document.getElementById("body");  
         backgroundImg.style.backgroundImage = "url('" + Level_ImageUrl[Level] + "')";
-        balance += Level_balance[Level];
+        balance += Level_balance[Level]; 
+        localStorage.setItem('balance', balance);
         balance_field.innerHTML = balance + "💰";
-        stopTimer()
+        stopTimer();
         Start();
     }
 } 
 
+
+
+
+//Статистика 
 let lvl_time = [];
 
 let seconds = 0;
@@ -212,19 +215,19 @@ let minutes = 0;
 let timerInterval;
 
 function startTimer() {
-  timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
     seconds++;
     if (seconds == 60) {
-      seconds = 0;
-      minutes++;
-    }
-  }, 1000);
+        seconds = 0;
+        minutes++;
+        }
+    }, 1000);
 }
 
 function stopTimer() {
-  clearInterval(timerInterval);
-  let result_to_push = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  lvl_time.push("Level " + Level + " - " + result_to_push);
-  seconds = 0;
-  minutes = 0;
+    clearInterval(timerInterval);
+    let result_to_push = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    lvl_time.push("Level " + Level + " - " + result_to_push);
+    seconds = 0;
+    minutes = 0;
 }

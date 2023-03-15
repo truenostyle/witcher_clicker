@@ -18,14 +18,14 @@ function creating_items()
     images.splice(0, images.length);
     hp_count = 0;
     
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 15; i++) {
         let img = new Image(); 
         img.src = './photo/items/chicken.png'; 
         images.push(img); 
     }
     
     
-    for(let i = 0; i < 5; i++)
+    for(let i = 0; i < 15; i++)
     {
         images[i].style.display = 'none';
         images[i].style.position = "absolute";
