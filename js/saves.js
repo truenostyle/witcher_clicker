@@ -43,7 +43,7 @@ for(let i = 0; i < saves_blocks.length; i++)
             chek_Save[i] = 1;
             localStorage.setItem('myArray', JSON.stringify(chek_Save));
             saves_blocks[i].style.backgroundColor = 'rgb(99, 99, 99)'; 
-            saves_blocks[i].innerHTML = "Сохранение " + (i + 1) + "\n" + "Level: " + (Level + 1);
+            saves_blocks[i].innerHTML = "Сохранение " + (i + 1) + " " + "Level: " + (Level + 1);
             localStorage.setItem(localArr[i], saves_blocks[i].innerHTML);  
         } 
         else {
