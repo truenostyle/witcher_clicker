@@ -6,7 +6,7 @@
 
     var Pers_HP = 100; 
 
-    //localStorage.clear();
+    localStorage.clear();
 
     let Enemy_ImageUrl = [
         './photo/enemies/dog.png',

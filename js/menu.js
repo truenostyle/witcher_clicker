@@ -31,8 +31,8 @@ let upgradeBack = document.getElementById('upgrade-back');
 
 let fullscreen = document.getElementById('fullscreen');
 
-let prompt = document.getElementById('prompt');
-let show_prompt = document.getElementById('show_prompt_block')
+let prompt2 = document.getElementById('prompt2');
+let show_prompt2 = document.getElementById('show_prompt_block')
 
 play.addEventListener('click', () => {
     if (exit_ask.style.visibility === 'visible' )
@@ -133,10 +133,10 @@ theme.addEventListener('change', () => {
         saves_back.style.backgroundColor = 'rgb(216, 216, 216)';
         saves_back.style.color = 'black';
         for (let i = 0; i < checkbox_labels.length; i++)
-       {
+        {
         console.log("TUT");
         checkbox_labels[i].style.color = 'black';
-      }
+        }
     for (let i = 0; myButtons.length;i++)
         {
             myButtons[i].style.backgroundColor ='rgb(216, 216, 216)';
@@ -156,14 +156,13 @@ theme.addEventListener('change', () => {
         saves_back.style.color = 'white';
         for (let i = 0; i < checkbox_labels.length; i++)
         {
-         checkbox_labels[i].style.color = 'white';
-       }  
+            checkbox_labels[i].style.color = 'white';
+        }  
         for (let i = 0; myButtons.length;i++)
         {
             myButtons[i].style.backgroundColor = 'black';
             myButtons[i].style.color = 'white'
-        }
-             
+        } 
     }
 });
 
@@ -190,11 +189,11 @@ upgradeBack.addEventListener('click', () => {
 
 fullscreen.addEventListener('change', () => {
     if (fullscreen.checked) {
-      document.documentElement.requestFullscreen();
+        document.documentElement.requestFullscreen();
     } else {
-      document.exitFullscreen();
+        document.exitFullscreen();
     }
-  });
+});
 
 let exit = document.getElementById('open_menu');
 let exit_ask = document.getElementById('exit_ask');

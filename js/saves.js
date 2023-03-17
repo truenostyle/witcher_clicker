@@ -25,8 +25,6 @@ for (let j = 0; j < chek_Save.length; j++) {
     }
 }
 
-
-
 saves.addEventListener('click', () => {
     menu.style.display = 'none';
     saves_conteiner.style.display = 'block';
@@ -46,7 +44,7 @@ for(let i = 0; i < saves_blocks.length; i++)
             localStorage.setItem('myArray', JSON.stringify(chek_Save));
             saves_blocks[i].style.backgroundColor = 'rgb(99, 99, 99)'; 
             saves_blocks[i].innerHTML = "Сохранение " + (i + 1) + "\n" + "Level: " + (Level + 1);
-            localStorage.setItem(localArr[i], saves_blocks[i].innerHTML); 
+            localStorage.setItem(localArr[i], saves_blocks[i].innerHTML);  
         } 
         else {
             var choise = prompt("1 - Удалить сейв \n2 - Продолжить игру");
@@ -69,26 +67,5 @@ for(let i = 0; i < saves_blocks.length; i++)
                 Start();
             }
         }
-
-
-        
-
-        /*
-        if(i === 0)
-        {
-            saves_blocks[1].style.backgroundColor = 'rgb(44, 44, 44)';   
-            saves_blocks[2].style.backgroundColor = 'rgb(44, 44, 44)';   
-        }
-        if(i === 1)
-        {
-            saves_blocks[0].style.backgroundColor = 'rgb(44, 44, 44)';   
-            saves_blocks[2].style.backgroundColor = 'rgb(44, 44, 44)';   
-        }
-        if(i === 2)
-        {
-            saves_blocks[0].style.backgroundColor = 'rgb(44, 44, 44)';   
-            saves_blocks[1].style.backgroundColor = 'rgb(44, 44, 44)';   
-        }
-        */
     })
 }

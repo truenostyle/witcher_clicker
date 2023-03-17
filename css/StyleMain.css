@@ -7,6 +7,11 @@ html {
     scroll-behavior: smooth;   
 }
 
+@font-face {
+    font-family: "Witcher";
+    src: url("../Шрифт/Morpheus.ttf")
+  }
+
 .enemy {
     cursor: url('../cursor/fight.png')  2 2, crosshair; 
     width: 150px;
@@ -66,4 +71,8 @@ div.enemies {
     cursor: url('../cursor/fight.png')  2 2, crosshair; 
     width: 150px;
     height: 150px;
+}
+
+.font_witcher {
+    font-family: "Witcher";
 }
