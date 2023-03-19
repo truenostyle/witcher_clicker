@@ -31,8 +31,8 @@ let upgradeBack = document.getElementById('upgrade-back');
 
 let fullscreen = document.getElementById('fullscreen');
 
-let prompt2 = document.getElementById('prompt2');
-let show_prompt2 = document.getElementById('show_prompt_block')
+let prompt_game = document.getElementById('prompt_game');
+let show_prompt = document.getElementById('show_prompt_block')
 
 play.addEventListener('click', () => {
     if (exit_ask.style.visibility === 'visible' )
@@ -230,10 +230,10 @@ exit.addEventListener('click', () => {
     
 });
 
-prompt.addEventListener('click', () => {
-    prompt.style.display = 'none';
+prompt_game.addEventListener('click', () => {
+    prompt_game.style.display = 'none';
 })
 
 show_prompt.addEventListener('click', () => {
-    prompt.style.display = 'block';
+    prompt_game.style.display = 'block';
 })

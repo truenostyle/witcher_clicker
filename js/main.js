@@ -1,5 +1,5 @@
 'use strict'
-    var Pers_Damage = 100; 
+    var Pers_Damage = 10; 
     //LOCAL
     const Pers_DamageLocal = localStorage.getItem('Pers_Damage'); 
     if (Pers_DamageLocal !== null) Pers_Damage = parseInt(Pers_DamageLocal); 

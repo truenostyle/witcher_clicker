@@ -243,7 +243,7 @@
     background-color: rgb(44, 44, 44);;
 }
 
-#prompt {
+#prompt_game {
     width: 15%;
     height: 12%;
     background-color: black;
@@ -253,7 +253,7 @@
     border-left: 1px solid gold;
     border-bottom: 1px solid gold;
 }
-#prompt h1{
+#prompt_game h1{
     color: white;
     font-size: 14px;
     margin-top: 0; /* Убираем верхний отступ */
@@ -261,7 +261,7 @@
     margin-left: 5px;
 }
 
-#prompt h2 {
+#prompt_game h2 {
     color: rgb(44, 44, 44);
     margin-top: 0; /* Убираем верхний отступ */
     margin-bottom: 0; /* Убираем нижний отступ */
