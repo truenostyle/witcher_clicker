@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script defer src="./js/audio.js"></script>
+        <script defer src="./js/main.js"></script>
+        <script defer src="./js/menu.js"></script>
+        <script defer src="./js/hits.js"></script>
+        <script defer src="./js/saves.js"></script>
+        <script defer src="./js/creating-healpotion.js"></script>
+        <script defer src="./js/upgrade-shop.js"></script>
+        <script defer src="./js/import.js"></script>
+        <link rel="stylesheet" href="./css/checkbox.css"> 
+        <link rel="stylesheet" href="./css/StyleMain.css">  
+        <link rel="stylesheet" href="./css/SrartPage.css">  
+        <link rel="stylesheet" href="./css/StyleMenu.css">  
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body id="body">  
+
+
+        <div id="no_money"><h1 class="font_witcher">Недостаточно средств</h1><button id="noMoney_ok">OK</button></div>
+
+        <div id="saves-conteiner">
+            <h1 id="saves_h1" class="font_witcher">СОХРАНЕНИЯ</h1>
+            <div id="saves-blocks">
+                <div class="saves-block font_witcher"></div>
+                <div class="saves-block font_witcher"></div>
+                <div class="saves-block font_witcher"></div>
+            </div>
+            <button id="import" class="font_witcher">ИМПОРТ</button>
+            <button id="saves-back" class="font_witcher">НАЗАД</button> 
+            <button id="export" class="font_witcher">ЭКСПОРТ</button>
+        </div>
+
+        <div id="upgradeShop-conteiner">
+            <h1 id="upgrade_h1" class="font_witcher">УЛУЧШЕНИЯ</h1>
+            <h2 id="balance" class="font_witcher"></h2>
+            <div id="shop-conteiners"> 
+            <div class="upgrades"><img src="./photo/items/sword 1.png"><h2 id="price_sword_2lvl" class="font_witcher">100💰</h2><h3 class="font_witcher">15⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 2.png"><h2 id="price_sword_2lvl" class="font_witcher">300💰</h2><h3 class="font_witcher">22⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 3.png"><h2 id="price_sword_2lvl" class="font_witcher">500💰</h2><h3 class="font_witcher">30⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 4.png"><h2 id="price_sword_2lvl" class="font_witcher">650💰</h2><h3 class="font_witcher">38⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 5.png"><h2 id="price_sword_2lvl" class="font_witcher">700💰</h2><h3 class="font_witcher">43⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 6.png"><h2 id="price_sword_2lvl" class="font_witcher">800💰</h2><h3 class="font_witcher">50⚔️</h3></div>
+            <div class="upgrades"><img src="./photo/items/sword 7.png"><h2 id="price_sword_2lvl" class="font_witcher">1000💰</h2><h3 class="font_witcher">60</h3>⚔️</h3></div>
+            </div>
+        <button id="upgrade-back" class="font_witcher">НАЗАД</button> 
+        </div>
+
+        <div id="menu_conteiner">
+            <div id="menu">
+                <button id="play" class="menu_buttons font_witcher">ИГРАТЬ</button>
+                <button id="upgradeShop" class="menu_buttons font_witcher">МАГАЗИН УЛУЧШЕНИЙ</button>
+                <button id="settings" class="menu_buttons font_witcher">НАСТРОЙКИ</button>
+                <button id="saves" class="menu_buttons font_witcher">СОХРАНЕНИЯ</button>
+                <button id="exit" class="menu_buttons font_witcher">ВЫХОД</button>
+                <div id="settings_conteiner">
+
+                    <label>
+                        <input type="checkbox" id="difficutly">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label font_witcher">Повышенная сложность</span><br>
+                        <span class="checkbox-label font_witcher">(по умолчанию легкая)</span>
+                    </label>  
+
+                    <label>
+                        <input type="checkbox" id="fullscreen">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label font_witcher">Полный экран</span>
+                    </label>   
+
+                    <label>
+                        <input type="checkbox" id="theme">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label font_witcher">Светлая тема</span>
+                    </label>    
+
+                    <div class="range-control">
+                        <span class="checkbox-label font_witcher">Яркость</span>
+                        <input id="bright_range" type="range" min="10" max="190" value="100" class="slider">
+                    </div>
+
+                    <label>
+                        <input type="checkbox" id="sounds" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label font_witcher">Звуки</span>
+                    </label>               
+                    <label>
+                        <input type="checkbox" id="switch-music" onchange="change()" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-label font_witcher">Музыка</span>
+                    </label>
+                    <div class="range-control">
+                        <span class="checkbox-label font_witcher">Громкость звука</span>
+                        <input id="volume_range" type="range" min="0" max="10" value="3" class="slider">
+                    </div>
+
+                    <div class="range-control">
+                        <span class="checkbox-label font_witcher">Громкость музыки</span>
+                        <input id="music_range" type="range" min="0" max="10" value="3" class="slider">
+                    </div>
+
+                    <button id="back" class="font_witcher">НАЗАД</button> 
+                </div>
+            </div> 
+            </div>
+
+        <div id="game_conteiner">   
+        <div id="game_conteiner">  
+            <div id="prompt_game"><h1 class="font_witcher">ЛКМ - Атака</h1>
+                <h1 class="font_witcher">Для того, чтобы перейти на следующий уровень, нужно убить всех монстров.</h1>
+                <h1 class="font_witcher">Курочки восстанавливают здоровье</h1>
+                <h2 class="font_witcher">нажмите, чтобы скрыть</h2>
+            </div>
+            <div id="show_prompt_block"><h1 class="font_witcher">ПОДСКАЗКИ</h1></div> 
+        <div id="open_menu"><img src="./photo/exit.png"></div>
+
+        <div id="exit_ask">
+            <h1 class="font_witcher">Вы уверены, что хотите выйти?</h1>
+            <button id="exit_yes" class="font_witcher">ДА</button>
+            <button id="exit_cancel" class="font_witcher">ОТМЕНА</button>
+        </div>
+
+        <img id="img_sword" src="./photo/items/sword defolt.png"/> 
+
+
+        <audio id="myAudio" src="./sounds/music.mp3" autoplay loop></audio>  
+
+        <div class="w3-light-grey" style="position: absolute; width: 15%; margin-left: 5%; bottom: 10%;"> 
+            <div id="myBar" class="w3-red w3-center" style=" width:100%">100%</div>
+        </div> 
+        </div>
+
+    </body>
+</html>
