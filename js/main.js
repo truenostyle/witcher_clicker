@@ -1,5 +1,5 @@
 'use strict'
-    var Pers_Damage = 10; 
+    var Pers_Damage = 1; 
     //LOCAL
     const Pers_DamageLocal = localStorage.getItem('Pers_Damage'); 
     if (Pers_DamageLocal !== null) Pers_Damage = parseInt(Pers_DamageLocal); 
@@ -179,6 +179,17 @@ function Pers_damage(hp) {
         Pers_HP = 100;
         alert(lvl_time.join("\n"));
         alert("game over"); 
+        const elementsToDelete = document.querySelectorAll('.img_enemy2'); 
+            elementsToDelete.forEach((element) => {
+            element.remove();
+        });
+        const elementsToDelete2 = document.querySelectorAll('.img_enemy3'); 
+            elementsToDelete2.forEach((element) => {
+            element.remove();
+        });
+        Level = 0;
+        game_conteiner.style.display = 'none';
+        menu_conteiner.style.display = 'block';
     }
     
     var elem = document.getElementById("myBar");    
@@ -187,29 +198,28 @@ function Pers_damage(hp) {
 }  
 
 
-function check_Level()  { 
+function check_Level() {
     if (Level === 9) alert(lvl_time.join("\n"));  
-{
-
-    if (Level === 9)
     {
-        alert(lvl_time.join("\n"));
-        Level = 0;
-        game_conteiner.style.display = 'none';
-        menu_conteiner.style.display = 'block';
+        if (Level === 9)
+        {
+            alert(lvl_time.join("\n"));
+            Level = 0;
+            game_conteiner.style.display = 'none';
+            menu_conteiner.style.display = 'block';
+        } 
+        if (CountEnemyDie === Enemy_Spavn[Level]) {
+            Level++;
+            CountEnemyDie = 0;
+            var backgroundImg = document.getElementById("body");  
+            backgroundImg.style.backgroundImage = "url('" + Level_ImageUrl[Level] + "')";
+            balance += Level_balance[Level]; 
+            localStorage.setItem('balance', balance);
+            balance_field.innerHTML = balance + "💰";
+            stopTimer();
+            Start();
+        }
     } 
-    if (CountEnemyDie === Enemy_Spavn[Level]) {
-        Level++;
-        CountEnemyDie = 0;
-        var backgroundImg = document.getElementById("body");  
-        backgroundImg.style.backgroundImage = "url('" + Level_ImageUrl[Level] + "')";
-        balance += Level_balance[Level]; 
-        localStorage.setItem('balance', balance);
-        balance_field.innerHTML = balance + "💰";
-        stopTimer();
-        Start();
-    }
-} 
 }
 
 

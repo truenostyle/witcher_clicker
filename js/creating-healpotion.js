@@ -28,6 +28,7 @@ function creating_items()
     
     for(let i = 0; i < 15; i++)
     {
+        images[i].classList.add('img_enemy3');
         images[i].style.display = 'none';
         images[i].style.position = "absolute";
         images[i].style.width = "100px";
